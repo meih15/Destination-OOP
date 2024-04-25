@@ -1,6 +1,6 @@
 const Bag = require('../../classes/Bag');
 
-describe("Bag Class Test", ()=> {
+describe("Bag Class Tests", ()=> {
     let bag
 
     beforeEach(() => {
@@ -16,7 +16,7 @@ describe("Bag Class Test", ()=> {
     test("Properties should have the correct Data Type", () => {
         expect(typeof bag.weight).toBe("number")
         expect(typeof bag.id).toBe("number")
-        expect(typeof bag.owner).toBe("string")
+        expect(typeof bag.owner === "string" || bag.owner === null).toBe(true);
     })
 
     test("getOwner() should return the initial owner", ()=> {

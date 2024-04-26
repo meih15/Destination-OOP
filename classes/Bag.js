@@ -11,7 +11,7 @@ class Bag {
     }
 
     assignOwner(person) {
-        return this.owner = person
+        this.owner = person
     }
 }
 

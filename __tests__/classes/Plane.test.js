@@ -1,17 +1,20 @@
 const Plane = require('../../classes/Plane');
-const Person = require('../../classes/Person')
+const Person = require('../../classes/Person');
+const Airport = require('../../classes/Airport')
 
 describe("Plane Class Tests", () => {
     let plane 
+    let airport
 
     beforeEach(() => {
-        plane = new Plane("JetBlue", "OriginAirportCode", "Japan")
+        plane = new Plane("JetBlue", "Japan")
+        airport = new Airport("JFK", "JFK")
+        plane.origin = airport.airportCode
     })
 
     test("Constructor should properly initialize properties", () => {
         expect(plane.company).toBe("JetBlue");
-        expect(plane.origin).toBe("OriginAirportCode");
-        expect(plane.destination).toBe("Japan");
+        expect(plane.origin).toBe("JFK");        expect(plane.destination).toBe("Japan");
         expect(plane.passengers).toEqual([]);
     });
 

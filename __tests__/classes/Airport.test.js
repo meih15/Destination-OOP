@@ -5,7 +5,7 @@ describe("Airport Class Tests", () => {
     let airport
 
     beforeEach(() => {
-        airport = new Aiport("name", "airportCode")
+        airport = new Airport("name", "airportCode")
     })
 
     test("Constructor should properly initialize properties", () => {
@@ -22,9 +22,9 @@ describe("Airport Class Tests", () => {
     });
 
 
-    test("addPlaner() adds a plane to the 'planes' array", () => {
+    test("addPlane() adds a plane to the 'planes' array", () => {
         let plane = new Plane("JetBlue", "OriginAirportCode", "Japan") 
-        plane.addPlane(plane);
+        airport.addPlane(plane);
         expect(airport.planes).toEqual([plane]);
     });
 
@@ -34,7 +34,7 @@ describe("Airport Class Tests", () => {
         airport.addPlane(plane1);
         airport.addPlane(plane2);
         const planes = airport.getPlanes();
-        expect(planes).toEqual([plane1, plane22]);
+        expect(planes).toEqual([plane1, plane2]);
     });
 
 })

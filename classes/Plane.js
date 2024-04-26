@@ -1,9 +1,11 @@
+const Airport = require("./Airport");
+
 class Plane {
 
-    constructor(company, origin, destination) {
+    constructor(company, destination) {
         this.company = company;
-        this.origin = origin;
         this.destination = destination
+        this.origin = Airport.airportCode;
         this.passengers = [];
     }
 
